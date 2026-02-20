@@ -17,21 +17,11 @@ iptable_start() {
     # Direct connections for specific domains
     iptables -t nat -A BDIX -d facebook.com -j RETURN
     iptables -t nat -A BDIX -d messenger.com -j RETURN
-    iptables -t nat -A BDIX -d wise.com -j RETURN
-    iptables -t nat -A BDIX -d priyo.com -j RETURN
-    iptables -t nat -A BDIX -d upwork.com -j RETURN
-    iptables -t nat -A BDIX -d 172.16.50.7 -j RETURN
-    iptables -t nat -A BDIX -d aibl.com.bd -j RETURN
+    iptables -t nat -A BDIX -d youtube.com -j RETURN
 
 
     iptables -t nat -A BDIX -d 0.0.0.0/8 -j RETURN
-    iptables -t nat -A BDIX -d 10.0.0.0/8 -j RETURN
-    iptables -t nat -A BDIX -d 127.0.0.0/8 -j RETURN
-    iptables -t nat -A BDIX -d 169.254.0.0/16 -j RETURN
-    iptables -t nat -A BDIX -d 172.16.0.0/12 -j RETURN
     iptables -t nat -A BDIX -d 192.168.0.0/16 -j RETURN
-    iptables -t nat -A BDIX -d 224.0.0.0/4 -j RETURN
-    iptables -t nat -A BDIX -d 240.0.0.0/4 -j RETURN
 
     iptables -t nat -A BDIX -p tcp -j REDIRECT --to-ports ${PORT}
 
